@@ -1,0 +1,21 @@
+{
+  "name": "api-blueprint-focus-booster",
+  "version": "1.0.0",
+  "description": "API Blueprint Focus Booster",
+  "author": "Samir Djellil <samir@djellil.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saamo/api-blueprint-focus-booster.git"
+  },
+  "dependencies": {
+    "gulp": "^3.8.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-extract-json-like": "^1.2.0",
+    "gulp-json-lint": "^0.1.0",
+    "gulp-replace": "^0.5.3",
+    "gulp-soften": "^0.0.1",
+    "gulp-template": "^3.0.0",
+    "require-dir": "^0.1.0"
+  }
+}
