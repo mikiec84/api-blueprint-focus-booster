@@ -1,3 +1,5 @@
+![API Blueprint Focust Booster](http://i.imgur.com/Yz2chHL.png)
+
 # API Blueprint Focus Booster
 
 API Blueprint Focus Booster helps you when working with [API Blueprints](http://apiary.io). They can get really huge over time and it's easy to lose focus and productivity.
