@@ -1,13 +1,13 @@
 # API Blueprint Focus Booster
 
-API Blueprint Focus Booster helps you when working with [API Blueprints](http://apiary.io). They can get really huge over time and it's easy to lose focus and productivity.
+API Blueprint Focus Booster is a collection of [Gulp](http://gulpjs.com) tasks that help you write large [API Blueprints](https://apiblueprint.org) efficiently.
 
-It lets you split one huge document into smaller ones and provides you with a [Gulp](http://gulpjs.com) task which concatenates them into one file (_among other things like templating or JSON validation_) which you can then copy & paste directly to the [Apiary](http://apiary.io) for example.
+This tool lets you split one huge document into smaller ones and provides you with a task which concatenates them into one file (_among other things like templating or JSON validation_) which you can then copy & paste directly into the [Apiary](http://apiary.io).
 
 ## So what does it do exactly?
 
 1. Substitutes commonly used values (templating).
-2. Validates JSON strings inside files.
+2. Validates JSON strings inside files (payloads).
 3. Converts hard tabs to spaces.
 4. Concatenates all files into one output file.
 
