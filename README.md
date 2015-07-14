@@ -31,7 +31,7 @@ npm install
 And finally copy the example config file.
 
 ```
-cp config/config.example.js config/config.js
+cp config.example.js config.js
 ```
 
 ## Usage

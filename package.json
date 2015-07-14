@@ -1,6 +1,6 @@
 {
   "name": "api-blueprint-focus-booster",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "API Blueprint Focus Booster",
   "author": "Samir Djellil <samir@djellil.com>",
   "license": "MIT",
@@ -15,7 +15,6 @@
     "gulp-json-lint": "^0.1.0",
     "gulp-replace": "^0.5.3",
     "gulp-soften": "^0.0.1",
-    "gulp-template": "^3.0.0",
-    "require-dir": "^0.1.0"
+    "gulp-template": "^3.0.0"
   }
 }

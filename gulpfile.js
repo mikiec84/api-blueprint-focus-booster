@@ -1,12 +1,33 @@
-/*
-  gulpfile.js
-  ===========
-  Rather than manage one giant configuration file responsible
-  for creating multiple tasks, each task has been broken out into
-  its own file in gulp/tasks. Any file in that folder gets automatically
-  required by the loop in ./gulp/index.js (required below).
+'use strict';
 
-  To add a new task, simply add a new task file to gulp/tasks.
-*/
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var config = require('./config.js');
+var extractJsonLike = require('gulp-extract-json-like');
+var jsonLint = require('gulp-json-lint');
+var replace = require('gulp-replace');
+var soften = require('gulp-soften');
+var template = require('gulp-template');
 
-require('./gulp');
+var srcDir = './src/**/*.apib';
+
+gulp.task('validate', function() {
+	gulp.src(srcDir)
+		.pipe(template(config))
+		.pipe(replace(/^( {8}[^{]\S.*|\S.*| {4}(\+|-|\*).*)/gm, '')) // try to remove useless text
+		.pipe(extractJsonLike())
+		.pipe(jsonLint())
+		.pipe(jsonLint.report('verbose'));
+});
+
+gulp.task('main', ['validate'], function() {
+	gulp.src(srcDir)
+		.pipe(template(config))
+		.pipe(soften(4))
+		.pipe(concat('output.apib'))
+		.pipe(gulp.dest('./build/'));
+});
+
+gulp.task('build', ['main']);
+
+gulp.task('default', ['build']);
