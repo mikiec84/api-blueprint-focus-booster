@@ -1,3 +1,5 @@
+![API Blueprint Focust Booster](http://i.imgur.com/Yz2chHL.png)
+
 # API Blueprint Focus Booster
 
 API Blueprint Focus Booster is a collection of [Gulp](http://gulpjs.com) tasks that help you write large [API Blueprints](https://apiblueprint.org) efficiently.
