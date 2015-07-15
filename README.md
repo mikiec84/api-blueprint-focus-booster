@@ -4,7 +4,7 @@
 
 API Blueprint Focus Booster is a collection of [Gulp](http://gulpjs.com) tasks that help you write large [API Blueprints](https://apiblueprint.org) efficiently.
 
-This tool lets you split one huge document into smaller ones and provides you with a task which concatenates them into one file (_among other things like templating or JSON validation_) which you can then copy & paste directly into the [Apiary](http://apiary.io).
+This tool lets you split one huge document into smaller ones and provides you with a task which concatenates them into one file (_among other things like templating or JSON validation_) which you can then copy & paste directly into the [Apiary](http://apiary.io) for example.
 
 ## So what does it do exactly?
 
@@ -14,6 +14,8 @@ This tool lets you split one huge document into smaller ones and provides you wi
 4. Concatenates all files into one output file.
 
 ## Install
+
+> Preferred way is to use [Slush generator for API Blueprint Focus Booster](https://www.npmjs.com/package/slush-api-blueprint-focus-booster).
 
 Clone this repository.
 
@@ -46,10 +48,4 @@ Resulting API Blueprint is saved in `./build/output.apib` file.
 
 ## License
 
-Copyright (c) 2015 Samir Djellil
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
+MIT License Copyright (c) 2015 Samir Djellil
