@@ -4,7 +4,9 @@
 
 API Blueprint Focus Booster is a collection of [Gulp](http://gulpjs.com) tasks that help you write large [API Blueprints](https://apiblueprint.org) efficiently.
 
-This tool lets you split one huge document into smaller ones and provides you with a task which concatenates them into one file (_among other things like templating or JSON validation_) which you can then copy & paste directly into the [Apiary](http://apiary.io) for example.
+This tool lets you split one huge document into smaller ones so you can _easily_ edit them in your favorite text editor.
+
+When you're done, it will validate your API Blueprints (JSON payloads), concatenate them into one file and publish the resulting API Blueprint into the [Apiary.io](http://apiary.io).
 
 ## So what does it do exactly?
 
@@ -12,6 +14,7 @@ This tool lets you split one huge document into smaller ones and provides you wi
 2. Validates JSON strings inside files (payloads).
 3. Converts hard tabs to spaces.
 4. Concatenates all files into one output file.
+5. Publishes to Apiary.io.
 
 ## Install
 
@@ -19,20 +22,20 @@ This tool lets you split one huge document into smaller ones and provides you wi
 
 Clone this repository.
 
-```
+```bash
 git clone https://github.com/saamo/api-blueprint-focus-booster.git
 ```
 
-Since API Blueprint Focus Booster is powered by [Gulp](http://gulpjs.com), you need to install all the dependencies via [NPM](https://npmjs.com) first.
+Since this tool is powered by [Gulp](http://gulpjs.com), you need to install all the dependencies via [NPM](https://npmjs.com) first.
 
-```
+```bash
 cd api-blueprint-focus-booster
 npm install
 ```
 
 And finally copy the example config file.
 
-```
+```bash
 cp config.example.js config.js
 ```
 
@@ -40,12 +43,26 @@ cp config.example.js config.js
 
 Put your files (with `.apib` extension) into the `./src` directory and run following command.
 
-```
+```bash
 gulp
 ```
 
 Resulting API Blueprint is saved in `./build/output.apib` file.
 
+### Publish to Apiary.io
+
+In order to use publish task, you need to install the [Apiary CLI](https://client.apiary.io) first.
+
+```bash
+gem install apiaryio
+```
+
+Setup API _name_ and _token_ in the config file and then publish your API Blueprint using following command.
+
+```bash
+gulp publish
+```
+
 ## License
 
-MIT License Copyright (c) 2015 Samir Djellil
+MIT © [Samir Djellil](http://samirdjellil.com)

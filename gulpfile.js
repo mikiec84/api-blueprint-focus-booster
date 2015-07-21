@@ -6,10 +6,13 @@ var config = require('./config.js');
 var extractJsonLike = require('gulp-extract-json-like');
 var jsonLint = require('gulp-json-lint');
 var replace = require('gulp-replace');
+var shell = require('gulp-shell');
 var soften = require('gulp-soften');
 var template = require('gulp-template');
 
 var srcDir = './src/**/*.apib';
+var outDir = './build/';
+var outFile = 'output.apib';
 
 gulp.task('validate', function() {
 	gulp.src(srcDir)
@@ -27,6 +30,12 @@ gulp.task('main', ['validate'], function() {
 		.pipe(concat('output.apib'))
 		.pipe(gulp.dest('./build/'));
 });
+
+gulp.task('publish', shell.task([
+	'export APIARY_API_KEY=' + config.apiary.token + ' && \
+		apiary publish --api-name=' + config.apiary.name + ' \
+		--path=' + outDir + outFile
+]));
 
 gulp.task('build', ['main']);
 
