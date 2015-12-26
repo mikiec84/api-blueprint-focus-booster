@@ -15,13 +15,14 @@ var gulp = require('gulp'),
 
 var srcDir = './src/**/*.apib',
   outDir = './build/',
-  outFile = 'output.apib';
+  outFile = 'output.apib',
+  outHtmlFile = 'output.html';
 
 gulp.task('default', ['build']);
 
 gulp.task('build', ['validate', 'main']);
 
-gulp.task('validate', function () {
+gulp.task('validate', function() {
   return gulp.src(srcDir)
     .pipe(template(config))
     // try to remove useless text
@@ -31,7 +32,7 @@ gulp.task('validate', function () {
     .pipe(jsonLint.report('verbose'));
 });
 
-gulp.task('main', function () {
+gulp.task('main', function() {
   return gulp.src(srcDir)
     .pipe(template(config))
     .pipe(soften(4))
@@ -39,22 +40,22 @@ gulp.task('main', function () {
     .pipe(gulp.dest('./build/'));
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', function() {
   runSequence('validate', 'main', 'aglio', function() {
     gulp.src(outDir)
       .pipe(server({
         livereload: true,
         port: 3005,
-        defaultFile: 'output.html'
+        defaultFile: outHtmlFile
       }));
 
-    gulp.watch(srcDir, function () {
+    gulp.watch(srcDir, function() {
       runSequence('validate', 'main', 'aglio');
     });
   });
 });
 
-gulp.task('aglio', function () {
+gulp.task('aglio', function() {
   return gulp.src(outDir + 'output.apib')
     .pipe(aglio())
     .pipe(gulp.dest('build'));
